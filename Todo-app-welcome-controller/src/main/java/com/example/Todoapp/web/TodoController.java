@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @RestController
 public class TodoController {
@@ -32,6 +33,16 @@ public class TodoController {
         logger.info("listed all todos");
         return todos;
     }
+
+
+
+
+//    // all use getMapping
+//    @GetMapping("/todos")
+//    public Collection<Todo> getAllTodos(){
+//        Collection<Todo> todos = todoRepository.findAll();
+//        return todos;
+//    }
 
     // get specific todo
     @RequestMapping(
@@ -71,5 +82,8 @@ public class TodoController {
         return ResponseEntity.status(HttpStatus.OK).build();
 
     }
+
+
+
 
 }
